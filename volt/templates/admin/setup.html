@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+    <title>Log in | Django site admin</title>
+    <link rel="icon" type="image/x-icon" href="#">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- Primary Meta Tags -->
+    <title>Django Volt Admin</title>
+    <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,shrink-to-fit=no"
+    />
+    <meta name="title" content="Volt - Free Bootstrap 5 Admin Dashboard"/>
+    <meta name="author" content="Themesberg"/>
+    <meta
+            name="description"
+            content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS."
+    />
+    <meta
+            name="keywords"
+            content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, themesberg, themesberg dashboard, themesberg admin dashboard"
+    />
+    <link
+            rel="canonical"
+            href="https://themesberg.com/product/admin-dashboard/volt-premium-bootstrap-5-dashboard"
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://demo.themesberg.com/volt-pro"/>
+    <meta
+            property="og:title"
+            content="Volt - Free Bootstrap 5 Admin Dashboard"
+    />
+    <meta
+            property="og:description"
+            content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS."
+    />
+    <meta
+            property="og:image"
+            content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg"
+    />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta
+            property="twitter:url"
+            content="https://demo.themesberg.com/volt-pro"
+    />
+    <meta
+            property="twitter:title"
+            content="Volt - Free Bootstrap 5 Admin Dashboard"
+    />
+    <meta
+            property="twitter:description"
+            content="Volt Pro is a Premium Bootstrap 5 Admin Dashboard featuring over 800 components, 10+ plugins and 20 example pages using Vanilla JS."
+    />
+    <meta
+            property="twitter:image"
+            content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg"
+    />
+    <!-- Favicon -->
+    <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="/static/volt/assets/img/favicon/apple-touch-icon.png"
+    />
+    <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/static/volt/assets/img/favicon/favicon-32x32.png"
+    />
+    <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/static/volt/assets/img/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/img/favicon/site.webmanifest"/>
+    <link
+            rel="mask-icon"
+            href="/static/volt/assets/img/favicon/safari-pinned-tab.svg"
+            color="#ffffff"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <!-- Sweet Alert -->
+    <link
+            type="text/css"
+            href="/static/volt/vendor/sweetalert2/dist/sweetalert2.min.css"
+            rel="stylesheet"
+    />
+    <!-- Notyf -->
+    <link
+            type="text/css"
+            href="/static/volt/vendor/notyf/notyf.min.css"
+            rel="stylesheet"
+    />
+    <!-- Volt CSS -->
+
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+
+    <script src="/static/admin/js/nav_sidebar.js" defer></script>
+
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/login.css">
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+
+
+    <meta name="robots" content="NONE,NOARCHIVE">
+
+    <link type="text/css" href="/static/volt/css/volt.css" rel="stylesheet"/>
+    <link type="text/css" href="/static/volt/css/reset.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.1.95/css/materialdesignicons.min.css">
+</head>
+
+<body class="g-sidenav-show g-sidenav-pinned  login"
+      data-admin-utc-offset="0">
+<!-- Container -->
+<nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
+    <a class="navbar-brand me-lg-5">
+        <img class="navbar-brand-dark" src="/static/volt/assets/img/brand/light.svg" alt="Volt logo">
+        <img class="navbar-brand-light" src="/static/volt/assets/img/brand/dark.svg" alt="Volt logo">
+    </a>
+    <div class="d-flex align-items-center">
+        <button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+
+<main>
+    <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
+        <div class="container">
+            <div
+                    class="row justify-content-center form-bg-image"
+                    data-background-lg="/static/volt/assets/img/illustrations/signin.svg"
+                    style="background: url('/static/volt/assets/img/illustrations/signin.svg')"
+            >
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div
+                            class="
+                                  bg-white
+                                  shadow
+                                  border-0
+                                  rounded
+                                  border-light
+                                  p-4 p-lg-5
+                                  w-100
+                                  fmxw-500
+                                "
+                    >
+                        {% if otp_secret %}
+                        <div class="text-center text-md-center mb-4 mt-md-0">
+                            <h1 class="mb-0 h6">Scan The QR Code below Setup an Google Authentication app</h1>
+                        </div>
+                        {% else %}
+                        <div class="text-center text-md-center mb-6 mt-md-0">
+                            <h1 class="mb-0 h4">Click the button generate a 2FA application code.</h1>
+                        </div>
+                        {% endif %}
+
+                        <form action="" method="post">
+                            {% csrf_token %}
+
+                            {% if otp_secret %}
+                            <!--      <p><strong>OTP Secret:</strong></p>-->
+                            <!--      <p>{{ otp_secret }}</p>-->
+                            <div class="d-flex justify-content-center">
+                                <div class="qr-code-container">
+                                    {{ qr_code|safe }}
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+
+                            <div style="display:flex; justify-content: center; margin-top: 10%;">
+                                <button type="button" class="btn-primary col-6"
+                                        style=" border: 0px; border-radius: 3px; padding:5px;"><a
+                                        href="{% url 'confirm-2fa' %}" style="color: #fff;">Submit</a></button>
+                            </div>
+                            {% else %}
+                            {% if form_errors %}
+                            {% for error in form_errors %}
+                            <p class="errornote callout callout-danger p-3 h-75">
+                                {{ error }}
+                            </p>
+                            {% endfor %}
+                            {% else %}
+                            <!--                <label class="col-12 pl-5 pb-2" style="font-family:  Arial, Helvetica, sans-serif;">Click the button generate a 2FA application code.</label>-->
+                            {% endif %}
+                            <div class="submit-row">
+                                <input type="submit" value="Generate" class="d-flex justify-content-center">
+                            </div>
+                            {% endif %}
+                        </form>
+                        <style>
+                            .qr-code-container {
+                                position: relative;
+                                width: fit-content;
+                                background-color: white;
+                            }
+
+                            .qr-code-container::before,
+                            .qr-code-container::after,
+                            .qr-code-container span::before,
+                            .qr-code-container span::after {
+                                content: "";
+                                position: absolute;
+                                width: 25px;
+                                height: 25px;
+                                border: 3px solid #00a2ff;
+                            }
+
+                            .qr-code-container::before {
+                                top: 0;
+                                left: 0;
+                                border-width: 3px 0 0 3px;
+                            }
+
+                            .qr-code-container::after {
+                                top: 0;
+                                right: 0;
+                                border-width: 3px 3px 0 0;
+                            }
+
+                            .qr-code-container span::before {
+                                bottom: 0;
+                                left: 0;
+                                border-width: 0 0 3px 3px;
+                            }
+
+                            .qr-code-container span::after {
+                                bottom: 0;
+                                right: 0;
+                                border-width: 0 3px 3px 0;
+                            }
+
+                            .qr-code-container span {
+                                display: inline;
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!-- END Container -->
+
+<!-- Argon Scripts -->
+<!-- Core -->
+<script src="/static/volt/vendor/%40popperjs/core/dist/umd/popper.min.js"></script>
+<script src="/static/volt/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Vendor JS -->
+<script src="/static/volt/vendor/onscreen/dist/on-screen.umd.min.js"></script>
+<!-- Slider -->
+<script src="/static/volt/vendor/nouislider/dist/nouislider.min.js"></script>
+<!-- Smooth scroll -->
+<script src="/static/volt/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<!-- Charts -->
+<script src="/static/volt/vendor/chartist/dist/chartist.min.js"></script>
+<script src="/static/volt/vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Datepicker -->
+<script src="/static/volt/vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+<!-- Sweet Alerts 2 -->
+<script src="/static/volt/vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
+<!-- Moment JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+<!-- Vanilla JS Datepicker -->
+<script src="/static/volt/vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+<!-- Notyf -->
+<script src="/static/volt/vendor/notyf/notyf.min.js"></script>
+<!-- Simplebar -->
+<script src="/static/volt/vendor/simplebar/dist/simplebar.min.js"></script>
+<!-- Github buttons -->
+<script
+        async
+        defer="defer"
+        src="https://buttons.github.io/buttons.js"
+></script>
+<!-- Volt JS -->
+<script src="/static/volt/assets/js/volt.js"></script>
+</body>
+
+</html>
